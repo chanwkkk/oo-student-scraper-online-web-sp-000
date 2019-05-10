@@ -25,10 +25,13 @@ class Scraper
     student_hash[:bio]=doc.css(".description-holder p").text
 
     social_medias=doc.css(".social-icon-container").css("a")
+
     social_medias.each do |s|
+
       if s["href"].include?("twitter")
         student_hash[:twitter]=s["href"]
       elsif s["href"].include?("facebook")
+
           student_hash[:facebook]=s["href"]
         elsif  s["href"].include?("linkedin")
             student_hash[:linkedin]=s["href"]
@@ -37,7 +40,9 @@ class Scraper
             else student_hash[:blog]=s["href"]
             end
           end
+
        student_hash
   end
 
 end
+#social_medias[0].attribute("href").value

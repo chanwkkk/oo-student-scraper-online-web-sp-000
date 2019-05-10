@@ -1,6 +1,6 @@
 class Student
 
-  attr_accessor :name, :location, :twitter, :linkedin, :github, :blog, :profile_quote, :bio, :profile_url
+  attr_accessor :name, :location, :twitter, :linkedin, :github, :blog, :profile_quote, :bio, :profile_url, :facebook
 
   @@all = []
 
@@ -19,6 +19,7 @@ class Student
 
   def add_student_attributes(attributes_hash)
     attributes_hash.each do |key,value|
+      #binding.pry
       self.send("#{key}=",value)
     end
    self
